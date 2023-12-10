@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Huh</title>
+    <script type="module" src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="contractinfo">
+      <div>Next sign up for</div>
+      <div id="contracttype">bleh</div>
+      <div id="nextcontract">bleh</div>
+    </div>
+    <div class="tabs">
+      <div class="tab active" id="std" data-tab="std">Standard</div>
+      <div class="tab" id="anygrade" data-tab="anygrade">Any Grade</div>
+      <div class="tab" id="ultra" data-tab="ultra">Ultra</div>
+      <div class="tab" id="sr" data-tab="sr">Speedrun</div>
+      <div class="tab" id="fr" data-tab="fr">Fast Run</div>
+    </div>
+    <div class="tabs_content">
+      <div class="content std active">
+        <textarea id="stdcopybox1" rows="12" cols="90" readonly></textarea>
+        <textarea id="stdcopybox2" rows="1" cols="90" readonly></textarea>
+        <textarea id="stdcopybox3" rows="1" cols="90" readonly></textarea>
+        <textarea id="stdcopybox4" rows="1" cols="90" readonly></textarea>
+      </div>
+      <div class="content anygrade">
+        <textarea id="agcopybox1" rows="12" cols="90" readonly></textarea>
+        <textarea id="agcopybox2" rows="12" cols="90" readonly></textarea>
+      </div>
+      <div class="content ultra">
+        <textarea id="ultracopybox1" rows="12" cols="90" readonly></textarea>
+        <textarea id="ultracopybox2" rows="1" cols="90" readonly></textarea>
+        <textarea id="ultracopybox3" rows="1" cols="90" readonly></textarea>
+        <textarea id="ultracopybox4" rows="1" cols="90" readonly></textarea>
+      </div>
+      <div class="content sr">
+        <textarea id="srcopybox1" rows="12" cols="90" readonly></textarea>
+        <textarea id="srcopybox2" rows="1" cols="90" readonly></textarea>
+        <div>Reaction command:</div>
+        <textarea id="srcopybox3" rows="2" cols="90" readonly></textarea>
+      </div>
+      <div class="content fr">
+        <div class="non-ultra">
+          <div>Non-ultra FR:</div>
+          <textarea id="nonultrafrcopybox1" rows="12" cols="90" readonly></textarea>
+          <textarea id="nonultrafrcopybox2" rows="1" cols="90" readonly></textarea>
+          <textarea id="nonultrafrcopybox3" rows="1" cols="90" readonly></textarea>
+          <textarea id="nonultrafrcopybox4" rows="1" cols="90" readonly></textarea>
+        </div>
+        <div class="ultra" id="ultraFRBoxGroup">
+          <div>Ultra FR:</div>
+          <textarea id="ultrafrcopybox1" rows="12" cols="90" readonly></textarea>
+          <textarea id="ultrafrcopybox2" rows="1" cols="90" readonly></textarea>
+          <textarea id="ultrafrcopybox3" rows="1" cols="90" readonly></textarea>
+          <textarea id="ultrafrcopybox4" rows="1" cols="90" readonly></textarea>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
