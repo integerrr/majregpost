@@ -58,7 +58,7 @@ function getNextContractDropDate(dropDays) {
   let targetDate = new Date();
   let dayOfWeek = -1;
   let index = dropDays.findIndex(element => {
-    return targetDate.getUTCDay() < element ? true : false;
+    return targetDate.getUTCDay() <= element ? true : false;
   });
   index = (index == -1) ? 0 : index;
   dayOfWeek = dropDays[index];
