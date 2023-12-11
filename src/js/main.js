@@ -57,10 +57,10 @@ tabs.forEach(tab => {
 function getNextContractDropDate(dropDays) {
   let targetDate = new Date();
   let dayOfWeek = -1;
-  let index = dropDays.reverse().findIndex(element => {
-    targetDate.getUTCDay() >= element;
+  let index = dropDays.findIndex(element => {
+    return targetDate.getUTCDay() < element ? true : false;
   });
-  index = (index === -1) ? dropDays.length - 1 : index - 1;
+  index = (index == -1) ? 0 : index;
   dayOfWeek = dropDays[index];
 
   targetDate.setUTCDate(targetDate.getUTCDate() + ((dayOfWeek + 7 - targetDate.getUTCDay()) % 7 || 7));
