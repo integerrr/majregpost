@@ -81,6 +81,83 @@ function getNextContractDropDate(dropDays) {
   return targetDate;
 }
 
+/**
+ * @param {Date} targetDate
+ */
+function formatDate(targetDate) {
+  let dayOfWeekString = "";
+  let monthString = "";
+
+  switch (targetDate.getDay()) {
+    case 0:
+      dayOfWeekString = "Sunday";
+      break;
+    case 1:
+      dayOfWeekString = "Monday";
+      break;
+    case 2:
+      dayOfWeekString = "Tuesday";
+      break;
+    case 3:
+      dayOfWeekString = "Wednesday";
+      break;
+    case 4:
+      dayOfWeekString = "Thursday";
+      break;
+    case 5:
+      dayOfWeekString = "Friday";
+      break;
+    case 6:
+      dayOfWeekString = "Saturday";
+      break;
+    default:
+      break;
+  }
+  
+  switch (targetDate.getMonth()) {
+    case 0:
+      monthString = "January";
+      break;
+    case 1:
+      monthString = "February";
+      break;
+    case 2:
+      monthString = "March";
+      break;
+    case 3:
+      monthString = "April";
+      break;
+    case 4:
+      monthString = "May";
+      break;
+    case 5:
+      monthString = "June";
+      break;
+    case 6:
+      monthString = "July";
+      break;
+    case 7:
+      monthString = "August";
+      break;
+    case 8:
+      monthString = "September";
+      break;
+    case 9:
+      monthString = "Oktojer";
+      break;
+    case 10:
+      monthString = "November";
+      break;
+    case 11:
+      monthString = "December";
+      break;
+    default:
+      break;
+  }
+  
+  return `${dayOfWeekString}, ${monthString} ${targetDate.getDate()}, ${targetDate.getFullYear()} ${targetDate.toLocaleTimeString()}`;
+}
+
 function buildStdSignupPost() {
   const stdDropDays = [1, 3, 5];
 
@@ -89,7 +166,7 @@ function buildStdSignupPost() {
   let discordTime = dropMS / 1000;
   
   let nextContractDropText = document.querySelector("#nextcontract");
-  nextContractDropText.innerHTML = contractDay.toString();
+  nextContractDropText.innerHTML = formatDate(contractDay);
   let nextContractType = document.querySelector("#contracttype");
   nextContractType.innerHTML = "Non-ultra";
 
@@ -124,7 +201,7 @@ function buildAGSignupPost() {
   let discordTime = dropMS / 1000;
 
   let nextContractDropText = document.querySelector("#nextcontract");
-  nextContractDropText.innerHTML = contractDay.toString();
+  nextContractDropText.innerHTML = formatDate(contractDay);
   let nextContractType = document.querySelector("#contracttype");
   nextContractType.innerHTML = "Non-ultra";
   
@@ -165,7 +242,7 @@ function buildUltraSignupPost() {
   let discordTime = dropMS / 1000;
 
   let nextContractDropText = document.querySelector("#nextcontract");
-  nextContractDropText.innerHTML = contractDay.toString();
+  nextContractDropText.innerHTML = formatDate(contractDay);
   let nextContractType = document.querySelector("#contracttype");
   nextContractType.innerHTML = "Ultra";
 
@@ -201,7 +278,7 @@ function buildSRSignupPost() {
   let isSunday = contractDay.getUTCDay() == 0;
 
   let nextContractDropText = document.querySelector("#nextcontract");
-  nextContractDropText.innerHTML = contractDay.toString();
+  nextContractDropText.innerHTML = formatDate(contractDay);
   let nextContractType = document.querySelector("#contracttype");
   nextContractType.innerHTML = isSunday ? "Ultra" : "Non-ultra";
 
@@ -242,7 +319,7 @@ function buildFRSignupPost() {
   }
 
   let nextContractDropText = document.querySelector("#nextcontract");
-  nextContractDropText.innerHTML = contractDay.toString();
+  nextContractDropText.innerHTML = formatDate(contractDay);
   let nextContractType = document.querySelector("#contracttype");
   nextContractType.innerHTML = isNotFriday ? "Non-ultra" : "Both Ultra & non-ultra";
 
