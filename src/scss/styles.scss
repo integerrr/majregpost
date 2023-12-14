@@ -1,5 +1,37 @@
 @import "bootstrap/scss/bootstrap";
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #6150cf;
+    color: #faf9f7;
+  }
+
+  textarea.form-control {
+    background: #323388;
+    color: rgb(210, 210, 210);
+  }
+
+  .active {
+    background-color: #4d91ce;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #dec0f1;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  textarea.form-control {
+    background: white;
+    color: #7161ef;
+  }
+
+  .active {
+    background-color: #957fef;
+  }
+}
+
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -52,10 +84,10 @@
     padding: 50px;
   }
   
-  .active {
-    background-color:darkslateblue;
-    color: white;
-  }
+  // .active {
+  //   background-color: #41463D;
+  //   color: white;
+  // }
   
   .noultrafr {
     display: none;
