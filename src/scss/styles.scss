@@ -2,33 +2,41 @@
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-color: #6150cf;
-    color: #faf9f7;
+    background-color: #292e3d;
+    color: #f7f8fa;
   }
 
   textarea.form-control {
-    background: #323388;
+    background: #181c25;
     color: rgb(210, 210, 210);
   }
 
-  .active {
-    background-color: #4d91ce;
+  .tab {
+    background-color: #384257;
+  }
+
+  .tab:hover {
+    background-color: #303a4f;
   }
 }
 
 @media (prefers-color-scheme: light) {
   body {
-    background-color: #dec0f1;
+    background-color: #dadfe7;
     color: rgba(0, 0, 0, 0.87);
   }
 
   textarea.form-control {
-    background: white;
-    color: #7161ef;
+    background: #f3f4f7;
+    color: rgba(0, 0, 0, 0.8);
   }
 
-  .active {
-    background-color: #957fef;
+  .tab {
+    background-color: #b6bcce;
+  }
+
+  .tab:hover {
+    background-color: #aeb5c7;
   }
 }
 
@@ -36,10 +44,10 @@
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
+    font-size: 3vmin;
   
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: darkslateblue;
   
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -47,10 +55,19 @@
     -moz-osx-font-smoothing: grayscale;
   }
   
+  .contractinfo {
+    padding: 5% 5%;
+  }
+
   textarea {
     resize: none;
     font-family: monospace;
     font-stretch: condensed;
+  }
+
+  textarea.form-control {
+    border-radius: 7px;
+    border: 2px solid #7727ec;
   }
   
   h1 {
@@ -67,12 +84,28 @@
   
   .tabs {
     display: flex;
+    padding: 0 5%;
   }
   
   .tab {
     flex-grow: 1;
-    padding: 10px;
+    padding: 1% 0;
     cursor: pointer;
+    border-radius: 10px;
+    margin: 0 1%;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2.5vmin;
+  }
+
+  .tab.active {
+    background-color: #7727ec;
+    color: white;
+  }
+
+  .tab:hover {
+    outline: 2px solid #7727ec;
   }
   
   .content {
@@ -81,16 +114,9 @@
   
   .content.active {
     display: block;
-    padding: 50px;
+    padding: 5% 5%;
   }
-  
-  // .active {
-  //   background-color: #41463D;
-  //   color: white;
-  // }
   
   .noultrafr {
     display: none;
   }
-  
-  
