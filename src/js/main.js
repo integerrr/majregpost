@@ -63,7 +63,7 @@ function getNextContractDropDate(dropDays) {
   index = (index == -1) ? 0 : index;
   dayOfWeek = dropDays[index];
 
-  targetDate.setUTCDate(targetDate.getUTCDate() + ((dayOfWeek + 7 - targetDate.getUTCDay()) % 7 || 7));
+  targetDate.setUTCDate(targetDate.getUTCDate() + ((dayOfWeek + 7 - targetDate.getUTCDay()) % 7));
 
   let currentYr = targetDate.getFullYear();
   let PacificTimeOffset = 8;
