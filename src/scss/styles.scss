@@ -40,11 +40,45 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 20px;
+  }
+
+  #std_tab::before {
+    content: "STD";
+  }
+  #anygrade_tab::before {
+    content: "AG";
+  }
+  #sr_tab::before {
+    content: "SR";
+  }
+  #fr_tab::before {
+    content: "FR";
+  }
+}
+
+@media screen and (min-width: 601px) {
+  #std_tab::before {
+    content: "Standard";
+  }
+  #anygrade_tab::before {
+    content: "Any Grade";
+  }
+  #sr_tab::before {
+    content: "SpeedRun";
+  }
+  #fr_tab::before {
+    content: "Fast run";
+  }
+}
+
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-    font-size: 2vmin;
+    font-size: 16px;
   
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
@@ -59,6 +93,19 @@
     padding: 5% 5%;
   }
 
+  #contracttype {
+    font-weight: bold;
+  }
+
+  #nextcontract {
+    font-weight: bold;
+  }
+
+  .form-label {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
   textarea {
     resize: none;
     font-family: monospace;
@@ -68,6 +115,7 @@
   textarea.form-control {
     border-radius: 7px;
     border: 2px solid #7727ec;
+    font-size: 10px;
   }
   
   h1 {
@@ -96,7 +144,7 @@
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-    font-size: 1.7vmin;
+    font-size: 14px;
   }
 
   .tab.active {
