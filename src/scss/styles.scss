@@ -18,6 +18,10 @@
   .tab:hover {
     background-color: #303a4f;
   }
+
+  .contract-info-highlight {
+    color: hsl(264, 84%, 85%);
+  }
 }
 
 @media (prefers-color-scheme: light) {
@@ -38,11 +42,15 @@
   .tab:hover {
     background-color: #aeb5c7;
   }
+
+  .contract-info-highlight {
+    color: hsl(264, 84%, 30%);
+  }
 }
 
 @media screen and (max-width: 600px) {
   body {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   #std_tab::before {
@@ -93,11 +101,7 @@
     padding: 5% 5%;
   }
 
-  #contracttype {
-    font-weight: bold;
-  }
-
-  #nextcontract {
+  .contract-info-highlight {
     font-weight: bold;
   }
 
