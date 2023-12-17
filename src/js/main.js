@@ -291,7 +291,7 @@ This registration is for Speed Running. Please make sure you are caught up with 
 **If you decide you do not want to run the contract, you must remove your reactions before the contract is released. After co-ops are created, you are expected to join and complete the contract in your assigned co-op at the assigned time.**
 
 Timeslot Signups: jump [here](<https://discord.com/channels/455380663013736479/1151593648539054100/1172946026475307019>) for a detail explanation about this signup process
-React to the timeslots you will be available to __start__ at, where each number is how many hours after contract drop (<t:${discordTime}:t>). **Your selected timeslots must NOT account for the token farming phase**. We expect all members who sign up for a timeslot to begin being active in their assigned thread within **15 minutes** of their allotted start time.
+React to the timeslots you will be available to __start__ at, where each number is how many hours after contract drop (<t:${discordTime}:t>). **Your selected timeslots are the START time and does NOT account for time taken to farm tokens, which is typically ~90 minutes**. We expect all members who sign up for a timeslot to begin being active in their assigned thread within **15 minutes** of their allotted start time.
 *🕚  = +11*
 *🕛  = +12*`;
 
