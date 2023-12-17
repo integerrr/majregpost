@@ -36,7 +36,7 @@ export function any_grade_notice(discordTime) {
   
   ### DO NOT SIGN UP FOR REGULAR MAJEGGSTICS RUNS, IF YOU ARE JOINING THE ANY GRADE RUN!
   _ _
-  ${L_BRACKET}a:Penguin1:${R_BRACKET}${L_BRACKET}a:Penguin2:${R_BRACKET}${L_BRACKET}a:Penguin3:${R_BRACKET}${L_BRACKET}a:Penguin4:${R_BRACKET}
+  :Penguin1::Penguin2::Penguin3::Penguin4:
   _ _`).replace(/  +/g, '');
 }
 
