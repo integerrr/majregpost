@@ -160,20 +160,20 @@ function buildFRSignupPost() {
     ultraDiv.classList.add("noultrafr");
   }
 
-  let ultraFRPost1 = document.querySelector("#ultrafrcopybox1");
-  ultraFRPost1.innerHTML = builder.fr_signup(discordTime, true);
-
   let nextContractDropText = document.querySelector("#nextcontract");
   nextContractDropText.innerHTML = util.formatDate(contractDay);
   let nextContractType = document.querySelector("#contracttype");
   nextContractType.innerHTML = isNotFriday ? "Non-ultra" : "Both Ultra & non-ultra";
+
+  let ultraFRPost1 = document.querySelector("#ultrafrcopybox1");
+  ultraFRPost1.innerHTML = builder.fr_signup(contractDay, true);
 
   let nonUltraFRPost1 = document.querySelector("#nonultrafrcopybox1");
   let nonUltraFRPost2 = document.querySelector("#nonultrafrcopybox2");
   let nonUltraFRPost3 = document.querySelector("#nonultrafrcopybox3");
   let nonUltraFRPost4 = document.querySelector("#nonultrafrcopybox4");
   
-  nonUltraFRPost1.innerHTML = builder.fr_signup(discordTime, false);
+  nonUltraFRPost1.innerHTML = builder.fr_signup(contractDay, false);
   nonUltraFRPost2.innerHTML = builder.plus_one_reaction(discordTime);
   nonUltraFRPost3.innerHTML = builder.plus_six_reaction(discordTime);
   nonUltraFRPost4.innerHTML = builder.plus_twelve_reaction(discordTime);

@@ -91,11 +91,19 @@ export function sr_react_cmd() {
   return `!?react (msg ID) :zero: :one: :two: :three: :four: :five: :six: :seven: :eight: :nine: :keycap_ten: :clock11: :clock12:`;
 }
 
-export function fr_signup(discordTime, ultra) {
-  return `${ultra ? "" : `_ _
+/**
+ * @param {Date} contractDay
+ * @param {boolean} ultraPost
+ * @returns {string}
+ */
+export function fr_signup(contractDay, ultraPost) {
+  let discordTime = contractDay.getTime() / 1000;
+  let isFriday = contractDay.getUTCDay() == 5;
+  let needExtraSpace = !ultraPost && isFriday;
+  return `${needExtraSpace ? `_ _
   _ _
-  _ _
-  `}## :Majeggstic: Fastrun signups for legacy __${ultra ? "ULTRA" : "NON-ULTRA"}__ contract at ${L_BRACKET}t:${discordTime}:f${R_BRACKET} :Majeggstic:
+  _ _` : ""}
+  ## :Majeggstic: Fastrun signups for legacy __${ultraPost ? "ULTRA" : "NON-ULTRA"}__ contract at ${L_BRACKET}t:${discordTime}:f${R_BRACKET} :Majeggstic:
   _ _
   This registration is for Fast Running. Fast Runs are a little different to Speed Runs, so please make sure you are caught up with the rules and guidelines that we have provided. More information on Fast Runs can be found here: https://canary.discord.com/channels/455380663013736479/1151593648539054100/1156333094052315146
   
