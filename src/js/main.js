@@ -7,7 +7,13 @@ import * as builder from './postbuilder';
 let tabs = document.querySelectorAll(".tab");
 let tabContent = document.querySelectorAll(".content");
 
-buildStdSignupPost();
+let copyBtns = document.querySelectorAll(".copy-btn");
+
+copyBtns.forEach(btn => {
+  btn.addEventListener("click", function() {
+    util.copyContent(this.getAttribute("id"));
+  })
+})
 
 tabs.forEach(tab => {
   tab.addEventListener("click", function() {
@@ -50,6 +56,8 @@ tabs.forEach(tab => {
     }
   }
 });
+
+buildStdSignupPost();
 
 function buildStdSignupPost() {
   const stdDropDays = [1, 3, 5];
@@ -152,6 +160,9 @@ function buildFRSignupPost() {
     ultraDiv.classList.add("noultrafr");
   }
 
+  let ultraFRPost1 = document.querySelector("#ultrafrcopybox1");
+  ultraFRPost1.innerHTML = builder.fr_signup(discordTime, true);
+
   let nextContractDropText = document.querySelector("#nextcontract");
   nextContractDropText.innerHTML = util.formatDate(contractDay);
   let nextContractType = document.querySelector("#contracttype");
@@ -166,14 +177,4 @@ function buildFRSignupPost() {
   nonUltraFRPost2.innerHTML = builder.plus_one_reaction(discordTime);
   nonUltraFRPost3.innerHTML = builder.plus_six_reaction(discordTime);
   nonUltraFRPost4.innerHTML = builder.plus_twelve_reaction(discordTime);
-
-  let ultraFRPost1 = document.querySelector("#ultrafrcopybox1");
-  let ultraFRPost2 = document.querySelector("#ultrafrcopybox2");
-  let ultraFRPost3 = document.querySelector("#ultrafrcopybox3");
-  let ultraFRPost4 = document.querySelector("#ultrafrcopybox4");
-  
-  ultraFRPost1.innerHTML = builder.fr_signup(discordTime, true);
-  ultraFRPost2.innerHTML = builder.plus_one_reaction(discordTime);
-  ultraFRPost3.innerHTML = builder.plus_six_reaction(discordTime);
-  ultraFRPost4.innerHTML = builder.plus_twelve_reaction(discordTime);
 }

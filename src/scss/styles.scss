@@ -1,4 +1,5 @@
 @import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 @media (prefers-color-scheme: dark) {
   body {
@@ -21,6 +22,10 @@
 
   .contract-info-highlight {
     color: hsl(264, 84%, 85%);
+  }
+
+  button:hover {
+    background-color: #303a4f;
   }
 }
 
@@ -45,6 +50,10 @@
 
   .contract-info-highlight {
     color: hsl(264, 84%, 30%);
+  }
+
+  button:hover {
+    background-color: #aeb5c7;
   }
 }
 
@@ -96,7 +105,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   .contractinfo {
     padding: 5% 5%;
   }
@@ -116,24 +125,24 @@
     font-size: 10px;
     white-space: pre-wrap;
   }
-  
+
   h1 {
     font-size: 3.2em;
     line-height: 1.1;
   }
-  
-  #app {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
+
+  button {
+    border: none;
+    border-radius: 10px;
+    margin: 1%;
+    background-color: transparent;
   }
-  
+
   .tabs {
     display: flex;
     padding: 0 5%;
   }
-  
+
   .tab {
     flex-grow: 1;
     padding: 1% 0;
@@ -154,16 +163,20 @@
   .tab:hover {
     outline: 2px solid #7727ec;
   }
-  
+
+  .copybox-header {
+    align-items: center;
+  }
+
   .content {
     display: none;
   }
-  
+
   .content.active {
     display: block;
     padding: 5% 5%;
   }
-  
+
   .noultrafr {
     display: none;
   }

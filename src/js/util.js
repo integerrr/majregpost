@@ -1,3 +1,4 @@
+//@ts-check
 export const ONE_HOUR_IN_SECONDS = 60 * 60;
 
 /**
@@ -105,4 +106,49 @@ export function formatDate(targetDate) {
   }
 
   return `${dayOfWeekString}, ${monthString} ${targetDate.getDate()}, ${targetDate.getFullYear()} ${targetDate.toLocaleTimeString()}`;
+}
+
+/**
+ * @param {string} BtnDivID
+ */
+export async function copyContent(BtnDivID) {
+  console.log(`button for ${BtnDivID} clicked`);
+  let parentDiv = document.getElementById(BtnDivID).closest(".mb-3");
+  console.log(parentDiv);
+  let targetDiv = parentDiv.querySelector("code.form-control");
+  console.log(targetDiv);
+  let content = targetDiv.innerHTML.replace(/&lt;/g, '<')
+                                  .replace(/&gt;/g, '>');
+  try {
+    await navigator.clipboard.writeText(content);
+    console.log(`copied "${content}"`);
+    changeBtnIcon(true, BtnDivID);
+  } catch (error) {
+    console.error("cannot copy, ", error);
+    changeBtnIcon(false, BtnDivID);
+  }
+}
+
+/**
+ * @param {boolean} copySuccess
+ * @param {string} BtnDivID
+ */
+function changeBtnIcon(copySuccess, BtnDivID) {
+  let btnDiv = document.getElementById(BtnDivID);
+  console.log(btnDiv);
+
+  btnDiv.classList.remove("bi-clipboard2");
+  if (copySuccess) {
+    btnDiv.classList.add("bi-clipboard2-check-fill");
+    setTimeout(() => {
+      btnDiv.classList.remove("bi-clipboard2-check-fill");
+      btnDiv.classList.add("bi-clipboard2");
+    }, 1000);
+  } else {
+    btnDiv.classList.add("bi-clipboard2-x");
+    setTimeout(() => {
+      btnDiv.classList.remove("bi-clipboard2-x");
+      btnDiv.classList.add("bi-clipboard2");
+    }, 1000);
+  }
 }
