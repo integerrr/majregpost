@@ -128,8 +128,6 @@ function buildSRSignupPost() {
   const SRDropDays = [0, 1, 3, 5];
 
   let contractDay = util.getNextContractDropDate(SRDropDays);
-  let dropMS = contractDay.getTime();
-  let discordTime = dropMS / 1000;
   let isSunday = contractDay.getUTCDay() == 0;
 
   let nextContractDropText = document.querySelector("#nextcontract");
@@ -141,8 +139,8 @@ function buildSRSignupPost() {
   let post2 = document.querySelector("#srcopybox2");
   let post3 = document.querySelector("#srcopybox3");
 
-  post1.innerHTML = builder.sr_signup(discordTime, isSunday);
-  post2.innerHTML = builder.sr_reminder(isSunday);
+  post1.innerHTML = builder.sr_signup(contractDay);
+  post2.innerHTML = builder.sr_reminder(contractDay);
   post3.innerHTML = builder.sr_react_cmd();
 }
 

@@ -70,8 +70,11 @@ export function ultra_signup(discordTime) {
   React to the best timeslot for your schedule. You must join your coop group within 5 hours of the coop starting.`).replace(/  +/g, '');
 }
 
-export function sr_signup(discordTime, isSunday) {
-  return (`## :Majeggstic: Speedrun signups for __${isSunday ? "ULTRA" : "NON-ULTRA"}__ leggacy contract at ${L_BRACKET}t:${discordTime}:f${R_BRACKET} :Majeggstic: 
+export function sr_signup(contractDay) {
+  let discordTime = contractDay.getTime() / 1000;
+  let isSunday = contractDay.getUTCDay() == 0;
+  let isMonday = contractDay.getUTCDay() == 1;
+  return (`## :Majeggstic: Speedrun signups for ${isMonday ? "new" : `__${isSunday ? "ULTRA" : "NON-ULTRA"}__ leggacy`} contract at ${L_BRACKET}t:${discordTime}:f${R_BRACKET} :Majeggstic:
 
   This registration is for Speed Running. Please make sure you are caught up with the rules and guidelines that we have provided. The information hub can be found here: https://discord.com/channels/455380663013736479/1151593648539054100/1152059522907656242
   
@@ -83,8 +86,10 @@ export function sr_signup(discordTime, isSunday) {
   *🕛  = +12*`).replace(/  +/g, '');
 }
 
-export function sr_reminder(isSunday) {
-  return `## Reminder that this contract is being run as a __Speed Run__ for the __${isSunday ? "ULTRA" : "NON-ULTRA"}__ contract`;
+export function sr_reminder(contractDay) {
+  let isSunday = contractDay.getUTCDay() == 0;
+  let isMonday = contractDay.getUTCDay() == 1;
+  return `## Reminder that this contract is being run as a __Speed Run__ ${isMonday ? "" : `for the __${isSunday ? "ULTRA" : "NON-ULTRA"}__ contract`}`;
 }
 
 export function sr_react_cmd() {
