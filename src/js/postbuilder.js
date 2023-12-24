@@ -8,11 +8,11 @@ export function plus_one_reaction(discordTime) {
 }
 
 export function plus_six_reaction(discordTime) {
-  return `:SparkleR: React with this to start at ${L_BRACKET}t:${discordTime + util.ONE_HOUR_IN_SECONDS * 6}:t${R_BRACKET} - 6 hour after Contract Drop.`;
+  return `:SparkleL: React with this to start at ${L_BRACKET}t:${discordTime + util.ONE_HOUR_IN_SECONDS * 6}:t${R_BRACKET} - 6 hour after Contract Drop.`;
 }
 
 export function plus_twelve_reaction(discordTime) {
-  return `:SparkleR: React with this to start at ${L_BRACKET}t:${discordTime + util.ONE_HOUR_IN_SECONDS * 12}:t${R_BRACKET} - 12 hour after Contract Drop.`;
+  return `:SparkleE: React with this to start at ${L_BRACKET}t:${discordTime + util.ONE_HOUR_IN_SECONDS * 12}:t${R_BRACKET} - 12 hour after Contract Drop.`;
 }
 
 export function std_signup(discordTime) {
